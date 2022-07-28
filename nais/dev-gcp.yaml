@@ -16,9 +16,6 @@ spec:
   readiness:
     path: /internal/isReady
     initialDelay: 60
-  prometheus:
-    enabled: true
-    path: /arbeidsgiver-mock-enhetsregisteret/internal/actuator/prometheus
   env:
     - name: SERVER_PORT
       value: "8080"
