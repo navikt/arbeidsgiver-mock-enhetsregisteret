@@ -1,7 +1,5 @@
 name: Build & deploy
-
 on: [ push ]
-
 env:
   IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
@@ -11,7 +9,7 @@ concurrency:
 
 jobs:
   test:
-    name: Run tests
+    name: Compile and test
     if: github.ref != 'refs/heads/mob'
     runs-on: ubuntu-20.04
     steps:
@@ -64,9 +62,9 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository }}:latest,${{ env.IMAGE }}
-      - uses: nais/deploy/actions/deploy@v1
+      - name: Deploy to dev-gcp
+        uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
-          VAR: image=${{ env.IMAGE }}
           RESOURCE: nais/dev-gcp.yaml
