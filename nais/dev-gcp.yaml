@@ -9,7 +9,7 @@ spec:
   image: ghcr.io/navikt/arbeidsgiver-mock-enhetsregisteret:621197be9090da5ee2b4e1aca4dd2694b357daab
   port: 8080
   ingresses:
-    - https://arbeidsgiver-mock-enhetsregisteret.dev.nav.no/arbeidsgiver-mock-enhetsregisteret
+    - https://arbeidsgiver-mock-enhetsregisteret.dev.nav.no
   liveness:
     path: /internal/isAlive
     initialDelay: 60

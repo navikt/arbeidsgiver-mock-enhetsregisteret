@@ -11,7 +11,7 @@ val ENHETSREGISTERET_API_PATH = "/enhetsregisteret/api"
 
 fun Route.aktivitetEndepunkter(enhetsregisteretService: EnhetsregisteretService) {
 
-    get("/$ENHETSREGISTERET_API_PATH/underenheter/{orgnr}") {
+    get("$ENHETSREGISTERET_API_PATH/underenheter/{orgnr}") {
         val orgnr = call.parameters["orgnr"] ?: return@get call.respond(HttpStatusCode.NotFound)
         val underenhet: Underenhet = enhetsregisteretService.hentAktiviteterForVirksomhet(orgnr)
         call.respond(underenhet.tilDto())
