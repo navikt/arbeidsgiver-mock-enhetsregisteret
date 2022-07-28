@@ -1,7 +1,7 @@
 name: Build & deploy
 on: [ push ]
 env:
-  IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
+  docker_image: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
 concurrency:
   group: deploy-on-${{ github.ref }}
@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   test:
-    name: Compile, test, build and push image
+    name: Compile and test
     if: github.ref != 'refs/heads/mob'
     runs-on: ubuntu-20.04
     steps:
