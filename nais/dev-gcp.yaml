@@ -6,7 +6,7 @@ metadata:
   labels:
     team: teamia
 spec:
-  image: ghcr.io/navikt/arbeidsgiver-mock-enhetsregisteret:621197be9090da5ee2b4e1aca4dd2694b357daab
+  image: {{ image }}
   port: 8080
   ingresses:
     - https://arbeidsgiver-mock-enhetsregisteret.dev.nav.no
