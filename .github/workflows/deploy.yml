@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   test:
-    name: Compile and test
+    name: Compile, test, build and push image
     if: github.ref != 'refs/heads/mob'
     runs-on: ubuntu-20.04
     steps:
@@ -29,9 +29,10 @@ jobs:
       - name: Run tests
         run: ./gradlew test --info
 
-  deploy-to-dev:
-    name: Deploy to dev-gcp
+  build-and-publish-image:
+    name: Build and publish image
     needs: test
+
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/INSERT-YOUR-BRANCH-HERE'
     runs-on: ubuntu-20.04
     steps:
@@ -48,23 +49,35 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+
       - name: Build jar with Gradle
         run: ./gradlew clean build installDist
+
       - name: Login to GitHub Docker Registry
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build and publish Docker image
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest,${{ env.IMAGE }}
-      - name: Deploy to dev-gcp
-        uses: nais/deploy/actions/deploy@v1
+          tags: ${{ env.docker_image }}
+
+  deploy-to-dev:
+    name: Deploy to dev-gcp
+    needs: build-and-publish-image
+
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/INSERT-YOUR-BRANCH-HERE'
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           RESOURCE: nais/dev-gcp.yaml
+          VAR: image=${{ env.docker_image }}
