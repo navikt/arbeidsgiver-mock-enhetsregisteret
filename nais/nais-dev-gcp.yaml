@@ -1,0 +1,24 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+    name: arbeidsgiver-mock-enhetsregisteret
+  namespace: teamia
+  labels:
+    team: teamia
+spec:
+  image: {{ image }}
+  port: 8080
+  ingresses:
+    - https://arbeidsgiver-mock-enhetsregisteret.dev.nav.no/arbeidsgiver-mock-enhetsregisteret"
+  liveness:
+    path: /internal/isalive
+    initialDelay: 60
+  readiness:
+    path: /internal/isready
+    initialDelay: 60
+  prometheus:
+    enabled: true
+    path: /arbeidsgiver-mock-enhetsregisteret/internal/actuator/prometheus
+  env:
+    - name: SERVER_PORT
+      value: 8080
