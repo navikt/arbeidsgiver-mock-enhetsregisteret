@@ -9,6 +9,7 @@ import io.ktor.server.routing.routing
 import no.nav.arbeidsgiver.mock.enhetsregisteret.api.endepunkt.aktivitetEndepunkter
 import no.nav.arbeidsgiver.mock.enhetsregisteret.api.endepunkt.helseEndepunkter
 import no.nav.arbeidsgiver.mock.enhetsregisteret.api.repository.UnderenhetRepository
+import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.log
 
 fun main() {
     bootstrapServer()
@@ -17,7 +18,9 @@ fun main() {
 fun bootstrapServer() {
     val enhetsregisteretService = EnhetsregisteretService(underenhetRepository = UnderenhetRepository())
 
-    embeddedServer(factory = Netty, port = System.getenv("SERVER_PORT")?.toInt() ?: 8484 ) {
+    val port = System.getenv("SERVER_PORT")?.toInt() ?: 8080
+    embeddedServer(factory = Netty, port = port) {
+        log("bootstrapServer").info("Starter applikasjon on port '${port}'")
         install(ContentNegotiation) {
             json()
         }
