@@ -1,10 +1,10 @@
 package no.nav.arbeidsgiver.mock.enhetsregisteret.api.repository
 
-import io.ktor.util.logging.*
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Adresse
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Link
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Næringskode
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Organisasjonsform
+import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Organisasjonsform.Companion.forBedrift
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OrganisasjonsformKode
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OrganisasjonsformLenker
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Underenhet
@@ -20,11 +20,7 @@ class UnderenhetRepository {
         return Underenhet(
             organisasjonsnummer = "910562452",
             navn = "Orkanger og Bremnes barnehage",
-            organisasjonsform = Organisasjonsform(
-                kode = OrganisasjonsformKode.BEDR,
-                beskrivelse = "Bedrift",
-                _links = OrganisasjonsformLenker(self = Link("https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/BEDR"))
-            ),
+            organisasjonsform = forBedrift(),
             postadresse = Adresse(
                 land = "Norge",
                 landkode = "NO",
