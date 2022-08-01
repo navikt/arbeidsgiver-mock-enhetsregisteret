@@ -2,7 +2,7 @@ package no.nav.arbeidsgiver.mock.enhetsregisteret.domene
 
 import kotlinx.serialization.Serializable
 
-enum class OrganisasjonsformKode { BEDR, ORGL }
+enum class OrganisasjonsformKode { AS, BEDR, ORGL }
 
 @Serializable
 class OrganisasjonsformLenker(
@@ -32,6 +32,15 @@ class Organisasjonsform(
                 OrganisasjonsformLenker(Link("https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/ORGL")
                 )
             )
+
+        fun forAksjeselskap() =
+            Organisasjonsform(
+                OrganisasjonsformKode.AS,
+                "Aksjeselskap",
+                OrganisasjonsformLenker(Link("https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/AS")
+                )
+            )
+
     }
 }
 

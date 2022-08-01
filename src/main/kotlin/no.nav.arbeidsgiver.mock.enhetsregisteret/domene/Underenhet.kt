@@ -9,7 +9,7 @@ class UnderenhetLenker(
     val overordnetEnhet: Link,
 )
 
-class Underenhet(
+data class Underenhet(
     private val organisasjonsnummer: String,
     private val navn: String,
     private val organisasjonsform: Organisasjonsform,

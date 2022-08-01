@@ -7,7 +7,6 @@ import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Målform
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Næringskode
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Organisasjonsform
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OverordnetEnhetLenker
-import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.UnderenhetLenker
 
 @Serializable
 data class OverordnetEnhetDTO(
