@@ -30,6 +30,11 @@ dependencies {
     implementation("net.logstash.logback:logstash-logback-encoder:7.2")
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.register<JavaExec>("generate-mock-files") {
+    classpath = sourceSets.test.get().runtimeClasspath
+    main = "no.nav.arbeidsgiver.mock.enhetsregisteret.GradleTasks"
 }

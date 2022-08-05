@@ -1,0 +1,64 @@
+{
+    "organisasjonsnummer": "313068420",
+    "navn": "TILLITSFULL PEN TIGER AS",
+    "organisasjonsform": {
+        "kode": "AS",
+        "beskrivelse": "Aksjeselskap",
+        "_links": {
+            "self": {
+                "href": "https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/AS"
+            }
+        }
+    },
+    "hjemmeside": "www.test.com",
+    "postadresse": {
+        "land": "Norge",
+        "landkode": "NO",
+        "postnummer": "0661",
+        "poststed": "OSLO",
+        "adresse": [
+            "Default adresse"
+        ],
+        "kommune": "OSLO",
+        "kommunenummer": "0301"
+    },
+    "registreringsdatoEnhetsregisteret": "2010-01-01",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+        "beskrivelse": "Sykehjem",
+        "kode": "87.101"
+    },
+    "antallAnsatte": 2550,
+    "overordnetEnhet": "999999999",
+    "forretningsadresse": {
+        "land": "Norge",
+        "landkode": "NO",
+        "postnummer": "0661",
+        "poststed": "OSLO",
+        "adresse": [
+            "Default adresse"
+        ],
+        "kommune": "OSLO",
+        "kommunenummer": "0301"
+    },
+    "stiftelsesdato": "2010-01-01",
+    "institusjonellSektorkode": {
+        "kode": "8300",
+        "beskrivelse": "Statsforvaltningen"
+    },
+    "registrertIForetaksregisteret": false,
+    "registrertIStiftelsesregisteret": false,
+    "registrertIFrivillighetsregisteret": false,
+    "konkurs": false,
+    "underAvvikling": false,
+    "underTvangsavviklingEllerTvangsopplosning": false,
+    "maalform": "Bokmål",
+    "_links": {
+        "self": {
+            "href": "https://data.brreg.no/enhetsregisteret/api/enheter/313068420"
+        },
+        "overordnetEnhet": {
+            "href": "https://data.brreg.no/enhetsregisteret/api/enheter/999999999"
+        }
+    }
+}

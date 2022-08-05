@@ -9,6 +9,7 @@ class UnderenhetLenker(
     val overordnetEnhet: Link,
 )
 
+@Serializable
 data class Underenhet(
     private val organisasjonsnummer: String,
     private val navn: String,

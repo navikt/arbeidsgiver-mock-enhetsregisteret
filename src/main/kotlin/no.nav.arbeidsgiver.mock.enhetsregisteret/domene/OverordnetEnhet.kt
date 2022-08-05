@@ -11,6 +11,7 @@ class OverordnetEnhetLenker(
 
 enum class Målform { Bokmål }
 
+@Serializable
 data class OverordnetEnhet(
     private val organisasjonsnummer: String,
     private val navn: String,

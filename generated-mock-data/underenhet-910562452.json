@@ -1,0 +1,53 @@
+{
+    "organisasjonsnummer": "910562452",
+    "navn": "Orkanger og Bremnes barnehage",
+    "organisasjonsform": {
+        "kode": "BEDR",
+        "beskrivelse": "Bedrift",
+        "_links": {
+            "self": {
+                "href": "https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/BEDR"
+            }
+        }
+    },
+    "postadresse": {
+        "land": "Norge",
+        "landkode": "NO",
+        "postnummer": "0661",
+        "poststed": "OSLO",
+        "adresse": [
+            "Default adresse"
+        ],
+        "kommune": "OSLO",
+        "kommunenummer": "0301"
+    },
+    "registreringsdatoEnhetsregisteret": "2010-01-01",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+        "beskrivelse": "Barnehager",
+        "kode": "88.911"
+    },
+    "antallAnsatte": 143,
+    "overordnetEnhet": "910562223",
+    "oppstartsdato": "2010-01-01",
+    "datoEierskifte": "2010-01-01",
+    "beliggenhetsadresse": {
+        "land": "Norge",
+        "landkode": "NO",
+        "postnummer": "0661",
+        "poststed": "OSLO",
+        "adresse": [
+            "Default adresse"
+        ],
+        "kommune": "OSLO",
+        "kommunenummer": "0301"
+    },
+    "_links": {
+        "self": {
+            "href": "https://data.brreg.no/enhetsregisteret/api/underenheter/894834412"
+        },
+        "overordnetEnhet": {
+            "href": "https://data.brreg.no/enhetsregisteret/api/enheter/910562223"
+        }
+    }
+}

@@ -59,9 +59,30 @@ class UnderenhetRepository {
             )
         )
 
+        val TILLITSFULL_PEN_TIGER_AS = UNDERENHET.copy(
+            organisasjonsnummer = "315829062",
+            navn = "TILLITSFULL PEN TIGER AS",
+            organisasjonsform = forBedrift(),
+            naeringskode1 = Næringskode(
+                kode = "87.101",
+                beskrivelse = "Sykehjem"
+            ),
+            antallAnsatte = 1621,
+            overordnetEnhet = "313068420",
+            _links = UnderenhetLenker(
+                self = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/underenheter/315829062"
+                ),
+                overordnetEnhet = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/313068420"
+                )
+            )
+        )
+
         val UNDERENHETER = mapOf(
             "910562452" to ORKANGER_OG_BREMNES,
-            "311874411" to SPISS_SJOKKERT_TIGER_AS_UNDERENHET
+            "311874411" to SPISS_SJOKKERT_TIGER_AS_UNDERENHET,
+            "315829062" to TILLITSFULL_PEN_TIGER_AS
         )
     }
 }

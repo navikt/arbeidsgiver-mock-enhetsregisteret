@@ -63,9 +63,30 @@ class OverordnetEnhetRepository {
             )
         )
 
+        val TILLITSFULL_PEN_TIGER_AS = Default.OVERORDNET_ENHET.copy(
+            organisasjonsnummer = "313068420",
+            navn = "TILLITSFULL PEN TIGER AS",
+            organisasjonsform = Organisasjonsform.forAksjeselskap(),
+            naeringskode1 = Næringskode(
+                kode = "87.101",
+                beskrivelse = "Sykehjem"
+            ),
+            antallAnsatte = 2550,
+            overordnetEnhet = "999999999",
+            _links = OverordnetEnhetLenker(
+                self = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/313068420"
+                ),
+                overordnetEnhet = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/999999999"
+                )
+            )
+        )
+
         val OVERORDNET_ENHETER = mapOf(
             "910562223" to KOMMUNE_MED_KOMMUNENR_1142,
-            "310529915" to SPISS_SJOKKERT_TIGER_AS
+            "310529915" to SPISS_SJOKKERT_TIGER_AS,
+            "313068420" to TILLITSFULL_PEN_TIGER_AS
         )
     }
 }
