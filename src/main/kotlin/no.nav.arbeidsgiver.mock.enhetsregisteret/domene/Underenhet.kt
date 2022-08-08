@@ -22,8 +22,7 @@ data class Underenhet(
     private val overordnetEnhet: String,
     private val oppstartsdato: String,
     private val datoEierskifte: String,
-    private val beliggenhetsadresse: Adresse,
-    private val _links: UnderenhetLenker,
+    private val beliggenhetsadresse: Adresse
 ) {
     fun tilDto() = UnderenhetDTO(
         organisasjonsnummer = organisasjonsnummer,
@@ -38,6 +37,13 @@ data class Underenhet(
         oppstartsdato = oppstartsdato,
         datoEierskifte = datoEierskifte,
         beliggenhetsadresse = beliggenhetsadresse,
-        _links = _links
+        _links = UnderenhetLenker(
+            self = Link(
+                href = "https://data.brreg.no/enhetsregisteret/api/underenheter/${organisasjonsnummer}"
+            ),
+            overordnetEnhet = Link(
+                href = "https://data.brreg.no/enhetsregisteret/api/enheter/${overordnetEnhet}"
+            )
+        )
     )
 }

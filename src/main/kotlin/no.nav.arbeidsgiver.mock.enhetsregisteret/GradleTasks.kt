@@ -2,6 +2,8 @@
 package no.nav.arbeidsgiver.mock.enhetsregisteret
 
 import kotlinx.serialization.json.Json
+import no.nav.arbeidsgiver.mock.enhetsregisteret.api.dto.OverordnetEnhetDTO
+import no.nav.arbeidsgiver.mock.enhetsregisteret.api.dto.UnderenhetDTO
 import no.nav.arbeidsgiver.mock.enhetsregisteret.api.repository.OverordnetEnhetRepository.Companion.OVERORDNET_ENHETER
 import no.nav.arbeidsgiver.mock.enhetsregisteret.api.repository.UnderenhetRepository.Companion.UNDERENHETER
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OverordnetEnhet
@@ -30,11 +32,11 @@ fun write(filename: String, content: String) {
 
 fun generateJson(orgnr: String, enheter: Map<String, Underenhet>): String {
     val underenhet = enheter.get(orgnr)
-    return jsonFormatter.encodeToString(Underenhet.serializer(), underenhet!!)
+    return jsonFormatter.encodeToString(UnderenhetDTO.serializer(), underenhet!!.tilDto())
 }
 
 fun generateJsonForOverordnetEnhet(orgnr: String, enheter: Map<String, OverordnetEnhet>): String {
     val overordnetEnhet = enheter.get(orgnr)
-    return jsonFormatter.encodeToString(OverordnetEnhet.serializer(), overordnetEnhet!!)
+    return jsonFormatter.encodeToString(OverordnetEnhetDTO.serializer(), overordnetEnhet!!.tilDto())
 }
 

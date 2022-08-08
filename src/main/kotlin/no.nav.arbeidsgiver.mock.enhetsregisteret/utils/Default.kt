@@ -41,15 +41,7 @@ class Default {
             overordnetEnhet = "999999999",
             oppstartsdato = DATO,
             datoEierskifte = DATO,
-            beliggenhetsadresse = ADRESSE,
-            _links = UnderenhetLenker(
-                self = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/underenheter/888888888"
-                ),
-                overordnetEnhet = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/999999999"
-                )
-            )
+            beliggenhetsadresse = ADRESSE
         )
 
         val OVERORDNET_ENHET = OverordnetEnhet(
@@ -78,15 +70,7 @@ class Default {
             konkurs = false,
             underAvvikling = false,
             underTvangsavviklingEllerTvangsopplosning = false,
-            maalform = Målform.Bokmål,
-            _links = OverordnetEnhetLenker(
-                self = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/999999999"
-                ),
-                overordnetEnhet = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/999999998"
-                )
-            )
+            maalform = Målform.Bokmål
         )
     }
 }

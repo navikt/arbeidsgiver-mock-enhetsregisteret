@@ -32,9 +32,7 @@ data class OverordnetEnhet(
     private val konkurs: Boolean,
     private val underAvvikling: Boolean,
     private val underTvangsavviklingEllerTvangsopplosning: Boolean,
-    private val maalform: Målform,
-    private val _links: OverordnetEnhetLenker
-
+    private val maalform: Målform
 ) {
     fun tilDto() = OverordnetEnhetDTO(
         organisasjonsnummer = organisasjonsnummer,
@@ -57,7 +55,14 @@ data class OverordnetEnhet(
         underAvvikling = underAvvikling,
         underTvangsavviklingEllerTvangsopplosning = underTvangsavviklingEllerTvangsopplosning,
         maalform = maalform,
-        _links = _links
+        _links = OverordnetEnhetLenker(
+            self = Link(
+                href = "https://data.brreg.no/enhetsregisteret/api/enheter/${organisasjonsnummer}"
+            ),
+            overordnetEnhet = Link(
+                href = "https://data.brreg.no/enhetsregisteret/api/enheter/${overordnetEnhet}"
+            )
+        )
     )
 }
 

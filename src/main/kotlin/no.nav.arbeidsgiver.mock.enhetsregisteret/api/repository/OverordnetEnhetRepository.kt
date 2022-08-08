@@ -1,11 +1,9 @@
 package no.nav.arbeidsgiver.mock.enhetsregisteret.api.repository
 
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.InstitusjonellSektorkode
-import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Link
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Næringskode
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Organisasjonsform
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OverordnetEnhet
-import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OverordnetEnhetLenker
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.Default
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.Default.Companion.OVERORDNET_ENHET
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.log
@@ -33,14 +31,6 @@ class OverordnetEnhetRepository {
             institusjonellSektorkode = InstitusjonellSektorkode(
                 kode = "8300",
                 beskrivelse = "Statsforvaltningen"
-            ),
-            _links = OverordnetEnhetLenker(
-                self = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/910562223"
-                ),
-                overordnetEnhet = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/991012206"
-                )
             )
         )
 
@@ -53,15 +43,7 @@ class OverordnetEnhetRepository {
                 beskrivelse = "Sykehjem"
             ),
             antallAnsatte = 2550,
-            overordnetEnhet = "999999999",
-            _links = OverordnetEnhetLenker(
-                self = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/310529915"
-                ),
-                overordnetEnhet = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/999999999"
-                )
-            )
+            overordnetEnhet = "999999999"
         )
 
         val TILLITSFULL_PEN_TIGER_AS = OVERORDNET_ENHET.copy(
@@ -73,15 +55,7 @@ class OverordnetEnhetRepository {
                 beskrivelse = "Sykehjem"
             ),
             antallAnsatte = 2550,
-            overordnetEnhet = "999999999",
-            _links = OverordnetEnhetLenker(
-                self = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/313068420"
-                ),
-                overordnetEnhet = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/999999999"
-                )
-            )
+            overordnetEnhet = "999999999"
         )
 
         val KVART_ALLSIDIG_TIGER_AS = OVERORDNET_ENHET.copy(
@@ -93,15 +67,7 @@ class OverordnetEnhetRepository {
                 beskrivelse = "Sykehjem"
             ),
             antallAnsatte = 2550,
-            overordnetEnhet = "999999999",
-            _links = OverordnetEnhetLenker(
-                self = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/312305755"
-                ),
-                overordnetEnhet = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/999999999"
-                )
-            )
+            overordnetEnhet = "999999999"
         )
 
         val INNBRINGENDE_LATTERMILD_APE = OVERORDNET_ENHET.copy(
@@ -113,15 +79,7 @@ class OverordnetEnhetRepository {
                 beskrivelse = "Sykehjem"
             ),
             antallAnsatte = 2550,
-            overordnetEnhet = "999999999",
-            _links = OverordnetEnhetLenker(
-                self = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/310721263"
-                ),
-                overordnetEnhet = Link(
-                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/999999999"
-                )
-            )
+            overordnetEnhet = "999999999"
         )
 
         val OVERORDNET_ENHETER = mapOf(
