@@ -11,7 +11,7 @@ class UnderenhetLenker(
 
 @Serializable
 data class Underenhet(
-    private val organisasjonsnummer: String,
+    internal val organisasjonsnummer: String,
     private val navn: String,
     private val organisasjonsform: Organisasjonsform,
     private val postadresse: Adresse,

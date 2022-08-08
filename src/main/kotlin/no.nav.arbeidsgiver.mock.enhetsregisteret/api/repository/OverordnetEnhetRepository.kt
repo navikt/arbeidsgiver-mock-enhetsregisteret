@@ -7,6 +7,7 @@ import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Organisasjonsform
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OverordnetEnhet
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OverordnetEnhetLenker
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.Default
+import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.Default.Companion.OVERORDNET_ENHET
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.log
 
 
@@ -20,7 +21,7 @@ class OverordnetEnhetRepository {
 
     companion object {
 
-        val KOMMUNE_MED_KOMMUNENR_1142 = Default.OVERORDNET_ENHET.copy(
+        val KOMMUNE_MED_KOMMUNENR_1142 = OVERORDNET_ENHET.copy(
             organisasjonsnummer = "910562223",
             navn = "Kommune med kommunenr 1142",
             antallAnsatte = 1621,
@@ -43,7 +44,7 @@ class OverordnetEnhetRepository {
             )
         )
 
-        val SPISS_SJOKKERT_TIGER_AS = Default.OVERORDNET_ENHET.copy(
+        val SPISS_SJOKKERT_TIGER_AS = OVERORDNET_ENHET.copy(
             organisasjonsnummer = "310529915",
             navn = "SPISS SJOKKERT TIGER AS",
             organisasjonsform = Organisasjonsform.forAksjeselskap(),
@@ -63,7 +64,7 @@ class OverordnetEnhetRepository {
             )
         )
 
-        val TILLITSFULL_PEN_TIGER_AS = Default.OVERORDNET_ENHET.copy(
+        val TILLITSFULL_PEN_TIGER_AS = OVERORDNET_ENHET.copy(
             organisasjonsnummer = "313068420",
             navn = "TILLITSFULL PEN TIGER AS",
             organisasjonsform = Organisasjonsform.forAksjeselskap(),
@@ -83,10 +84,52 @@ class OverordnetEnhetRepository {
             )
         )
 
+        val KVART_ALLSIDIG_TIGER_AS = OVERORDNET_ENHET.copy(
+            organisasjonsnummer = "312305755",
+            navn = "KVART ALLSIDIG TIGER AS",
+            organisasjonsform = Organisasjonsform.forAksjeselskap(),
+            naeringskode1 = Næringskode(
+                kode = "87.101",
+                beskrivelse = "Sykehjem"
+            ),
+            antallAnsatte = 2550,
+            overordnetEnhet = "999999999",
+            _links = OverordnetEnhetLenker(
+                self = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/312305755"
+                ),
+                overordnetEnhet = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/999999999"
+                )
+            )
+        )
+
+        val INNBRINGENDE_LATTERMILD_APE = OVERORDNET_ENHET.copy(
+            organisasjonsnummer = "310721263",
+            navn = "INNBRINGENDE LATTERMILD APE",
+            organisasjonsform = Organisasjonsform.forAksjeselskap(),
+            naeringskode1 = Næringskode(
+                kode = "87.101",
+                beskrivelse = "Sykehjem"
+            ),
+            antallAnsatte = 2550,
+            overordnetEnhet = "999999999",
+            _links = OverordnetEnhetLenker(
+                self = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/310721263"
+                ),
+                overordnetEnhet = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/999999999"
+                )
+            )
+        )
+
         val OVERORDNET_ENHETER = mapOf(
-            "910562223" to KOMMUNE_MED_KOMMUNENR_1142,
-            "310529915" to SPISS_SJOKKERT_TIGER_AS,
-            "313068420" to TILLITSFULL_PEN_TIGER_AS
+            KOMMUNE_MED_KOMMUNENR_1142.organisasjonsnummer to KOMMUNE_MED_KOMMUNENR_1142,
+            SPISS_SJOKKERT_TIGER_AS.organisasjonsnummer to SPISS_SJOKKERT_TIGER_AS,
+            TILLITSFULL_PEN_TIGER_AS.organisasjonsnummer to TILLITSFULL_PEN_TIGER_AS,
+            KVART_ALLSIDIG_TIGER_AS.organisasjonsnummer to KVART_ALLSIDIG_TIGER_AS,
+            INNBRINGENDE_LATTERMILD_APE.organisasjonsnummer to INNBRINGENDE_LATTERMILD_APE,
         )
     }
 }

@@ -79,10 +79,54 @@ class UnderenhetRepository {
             )
         )
 
+        val KVART_ALLSIDIG_TIGER_AS = UNDERENHET.copy(
+            organisasjonsnummer = "312679671",
+            navn = "KVART ALLSIDIG TIGER AS",
+            organisasjonsform = forBedrift(),
+            naeringskode1 = Næringskode(
+                kode = "87.101",
+                beskrivelse = "Sykehjem"
+            ),
+            antallAnsatte = 1621,
+            overordnetEnhet = OverordnetEnhetRepository.KVART_ALLSIDIG_TIGER_AS.organisasjonsnummer,
+            _links = UnderenhetLenker(
+                self = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/underenheter/312679671"
+                ),
+                overordnetEnhet = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/${OverordnetEnhetRepository.KVART_ALLSIDIG_TIGER_AS.organisasjonsnummer}"
+                )
+            )
+        )
+
+
+        val INNBRINGENDE_LATTERMILD_APE = UNDERENHET.copy(
+            organisasjonsnummer = "311745795",
+            navn = "INNBRINGENDE LATTERMILD APE",
+            organisasjonsform = forBedrift(),
+            naeringskode1 = Næringskode(
+                kode = "87.101",
+                beskrivelse = "Sykehjem"
+            ),
+            antallAnsatte = 1621,
+            overordnetEnhet = OverordnetEnhetRepository.INNBRINGENDE_LATTERMILD_APE.organisasjonsnummer,
+            _links = UnderenhetLenker(
+                self = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/underenheter/311745795"
+                ),
+                overordnetEnhet = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/${OverordnetEnhetRepository.INNBRINGENDE_LATTERMILD_APE.organisasjonsnummer}"
+                )
+            )
+        )
+
+
         val UNDERENHETER = mapOf(
-            "910562452" to ORKANGER_OG_BREMNES,
-            "311874411" to SPISS_SJOKKERT_TIGER_AS_UNDERENHET,
-            "315829062" to TILLITSFULL_PEN_TIGER_AS
+            ORKANGER_OG_BREMNES.organisasjonsnummer to ORKANGER_OG_BREMNES,
+            SPISS_SJOKKERT_TIGER_AS_UNDERENHET.organisasjonsnummer to SPISS_SJOKKERT_TIGER_AS_UNDERENHET,
+            TILLITSFULL_PEN_TIGER_AS.organisasjonsnummer to TILLITSFULL_PEN_TIGER_AS,
+            INNBRINGENDE_LATTERMILD_APE.organisasjonsnummer to INNBRINGENDE_LATTERMILD_APE,
+            KVART_ALLSIDIG_TIGER_AS.organisasjonsnummer to KVART_ALLSIDIG_TIGER_AS
         )
     }
 }

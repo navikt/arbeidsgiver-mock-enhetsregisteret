@@ -13,7 +13,7 @@ enum class Målform { Bokmål }
 
 @Serializable
 data class OverordnetEnhet(
-    private val organisasjonsnummer: String,
+    internal val organisasjonsnummer: String,
     private val navn: String,
     private val organisasjonsform: Organisasjonsform,
     private val hjemmeside: String,
