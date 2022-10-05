@@ -1,0 +1,53 @@
+{
+    "organisasjonsnummer": "810993502",
+    "navn": "ARENDAL OG BØNES REVISJON",
+    "organisasjonsform": {
+        "kode": "BEDR",
+        "beskrivelse": "Bedrift",
+        "_links": {
+            "self": {
+                "href": "https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/BEDR"
+            }
+        }
+    },
+    "postadresse": {
+        "land": "Norge",
+        "landkode": "NO",
+        "postnummer": "0661",
+        "poststed": "OSLO",
+        "adresse": [
+            "Default adresse"
+        ],
+        "kommune": "OSLO",
+        "kommunenummer": "0301"
+    },
+    "registreringsdatoEnhetsregisteret": "2010-01-01",
+    "registrertIMvaregisteret": false,
+    "naeringskode1": {
+        "beskrivelse": "Sykehjem",
+        "kode": "87.101"
+    },
+    "antallAnsatte": 1621,
+    "overordnetEnhet": "310721263",
+    "oppstartsdato": "2010-01-01",
+    "datoEierskifte": "2010-01-01",
+    "beliggenhetsadresse": {
+        "land": "Norge",
+        "landkode": "NO",
+        "postnummer": "0661",
+        "poststed": "OSLO",
+        "adresse": [
+            "Default adresse"
+        ],
+        "kommune": "OSLO",
+        "kommunenummer": "0301"
+    },
+    "_links": {
+        "self": {
+            "href": "https://data.brreg.no/enhetsregisteret/api/underenheter/810993502"
+        },
+        "overordnetEnhet": {
+            "href": "https://data.brreg.no/enhetsregisteret/api/enheter/310721263"
+        }
+    }
+}

@@ -77,6 +77,17 @@ class UnderenhetRepository {
             antallAnsatte = 1621,
             overordnetEnhet = OverordnetEnhetRepository.INNBRINGENDE_LATTERMILD_APE.organisasjonsnummer,
         )
+        val ARENDAL_OG_BØNES_REVISJON = UNDERENHET.copy(
+            organisasjonsnummer = "810993502",
+            navn = "ARENDAL OG BØNES REVISJON",
+            organisasjonsform = forBedrift(),
+            naeringskode1 = Næringskode(
+                kode = "87.101",
+                beskrivelse = "Sykehjem"
+            ),
+            antallAnsatte = 1621,
+            overordnetEnhet = OverordnetEnhetRepository.INNBRINGENDE_LATTERMILD_APE.organisasjonsnummer,
+        )
 
 
         val UNDERENHETER = mapOf(
@@ -84,7 +95,8 @@ class UnderenhetRepository {
             SPISS_SJOKKERT_TIGER_AS_UNDERENHET.organisasjonsnummer to SPISS_SJOKKERT_TIGER_AS_UNDERENHET,
             TILLITSFULL_PEN_TIGER_AS_UNDERENHET.organisasjonsnummer to TILLITSFULL_PEN_TIGER_AS_UNDERENHET,
             INNBRINGENDE_LATTERMILD_APE_UNDERENHET.organisasjonsnummer to INNBRINGENDE_LATTERMILD_APE_UNDERENHET,
-            KVART_ALLSIDIG_TIGER_AS_UNDERENHET.organisasjonsnummer to KVART_ALLSIDIG_TIGER_AS_UNDERENHET
+            KVART_ALLSIDIG_TIGER_AS_UNDERENHET.organisasjonsnummer to KVART_ALLSIDIG_TIGER_AS_UNDERENHET,
+            ARENDAL_OG_BØNES_REVISJON.organisasjonsnummer to ARENDAL_OG_BØNES_REVISJON
         )
     }
 }
