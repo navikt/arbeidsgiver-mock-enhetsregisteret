@@ -67,7 +67,7 @@ class UnderenhetRepository {
 
 
         val INNBRINGENDE_LATTERMILD_APE_UNDERENHET = UNDERENHET.copy(
-            organisasjonsnummer = "311745795",
+            organisasjonsnummer = "311545795",
             navn = "INNBRINGENDE LATTERMILD APE",
             organisasjonsform = forBedrift(),
             naeringskode1 = Næringskode(

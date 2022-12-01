@@ -1,5 +1,5 @@
 {
-    "organisasjonsnummer": "311745795",
+    "organisasjonsnummer": "311545795",
     "navn": "INNBRINGENDE LATTERMILD APE",
     "organisasjonsform": {
         "kode": "BEDR",
@@ -44,7 +44,7 @@
     },
     "_links": {
         "self": {
-            "href": "https://data.brreg.no/enhetsregisteret/api/underenheter/311745795"
+            "href": "https://data.brreg.no/enhetsregisteret/api/underenheter/311545795"
         },
         "overordnetEnhet": {
             "href": "https://data.brreg.no/enhetsregisteret/api/enheter/310721263"
