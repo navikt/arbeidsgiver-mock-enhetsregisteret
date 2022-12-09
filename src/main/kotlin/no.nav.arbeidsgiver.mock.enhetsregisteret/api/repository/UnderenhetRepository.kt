@@ -12,7 +12,12 @@ class UnderenhetRepository {
     fun hentForUnderenhet(orgnr: String): Underenhet {
         log("hentForUnderenhet").info("Henter opplysninger for underenhet '${orgnr}'")
 
-        return UNDERENHETER.getOrDefault(orgnr, UNDERENHET)
+        return UNDERENHETER.getOrDefault(
+            orgnr,
+            UNDERENHET.copy(
+                organisasjonsnummer = orgnr
+            )
+        )
     }
 
     companion object {
