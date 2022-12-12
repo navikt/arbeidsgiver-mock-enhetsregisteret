@@ -33,7 +33,7 @@ jobs:
     name: Build and publish image
     needs: test
 
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/INSERT-YOUR-BRANCH-HERE'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/default-underenhet-med-samme-orgnr'
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2

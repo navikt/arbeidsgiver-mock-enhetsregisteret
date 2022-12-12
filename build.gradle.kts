@@ -20,6 +20,9 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
 
+    val kotestVerstion = "5.4.2"
+    testImplementation("io.kotest:kotest-assertions-core:$kotestVerstion")
+
     val ktorVersion = "2.0.3"
     implementation("io.ktor:ktor-server-core:$ktorVersion")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
