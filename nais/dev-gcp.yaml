@@ -9,7 +9,7 @@ spec:
   image: {{ image }}
   port: 8080
   ingresses:
-    - https://arbeidsgiver-mock-enhetsregisteret.dev.nav.no
+    - https://arbeidsgiver-mock-enhetsregisteret.intern.dev.nav.no
   liveness:
     path: /internal/isAlive
     initialDelay: 60
