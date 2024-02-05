@@ -12,12 +12,13 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   test:
     name: Build, test and push docker image
-    permissions:
-      contents: read
-      id-token: write
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -41,8 +42,10 @@ jobs:
           java-version: 17
           distribution: temurin
           cache: gradle
+
       - name: Build jar with Gradle
         run: ./gradlew clean build installDist
+
       - uses: nais/docker-build-push@v0
         id: docker-push
         with:
@@ -55,7 +58,7 @@ jobs:
 
   deploy-to-dev:
     name: Deploy to dev-gcp
-    needs: build-and-publish-image
+    needs: docker-build-push
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
