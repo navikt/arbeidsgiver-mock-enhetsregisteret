@@ -22,8 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
           java-version: 17
           distribution: temurin
@@ -36,8 +36,8 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
           java-version: 17
           distribution: temurin
@@ -62,8 +62,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v3
-      - uses: nais/deploy/actions/deploy@v1
+      - uses: actions/checkout@v4
+      - uses: nais/deploy/actions/deploy@v2
         env:
           CLUSTER: dev-gcp
           IMAGE: ${{ needs.build-and-publish-image.outputs.image }}
