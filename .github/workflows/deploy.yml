@@ -58,7 +58,7 @@ jobs:
 
   deploy-to-dev:
     name: Deploy to dev-gcp
-    needs: docker-build-push
+    needs: build-and-publish-image
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
