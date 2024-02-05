@@ -1,83 +1,68 @@
-name: Build & deploy
-on: [ push ]
-env:
-  docker_image: ghcr.io/${{ github.repository }}:${{ github.sha }}
+name: Build and deploy
+run-name: Build and deploy ~~ "${{ github.event.head_commit.message }}"
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+      - '**/**.md'
 
 concurrency:
-  group: deploy-on-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   test:
-    name: Compile and test
-    if: github.ref != 'refs/heads/mob'
-    runs-on: ubuntu-20.04
+    name: Build, test and push docker image
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
-          java-version: '17'
-          distribution: 'zulu'
-      - uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+          java-version: 17
+          distribution: temurin
+          cache: gradle
       - name: Run tests
         run: ./gradlew test --info
 
   build-and-publish-image:
     name: Build and publish image
     needs: test
-
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/default-underenhet-med-samme-orgnr'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
-          java-version: '17'
-          distribution: 'zulu'
-      - uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-
+          java-version: 17
+          distribution: temurin
+          cache: gradle
       - name: Build jar with Gradle
         run: ./gradlew clean build installDist
-
-      - name: Login to GitHub Docker Registry
-        uses: docker/login-action@v1
+      - uses: nais/docker-build-push@v0
+        id: docker-push
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build and publish Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ${{ env.docker_image }}
+          team: teamia
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+          salsa: false
+    outputs:
+      image: ${{ steps.docker-push.outputs.image }}
 
   deploy-to-dev:
     name: Deploy to dev-gcp
-    needs: build-and-publish-image
-
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/INSERT-YOUR-BRANCH-HERE'
-    runs-on: ubuntu-20.04
+    needs: docker-build-push
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: nais/deploy/actions/deploy@v1
         env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
+          IMAGE: ${{ needs.build-and-publish-image.outputs.image }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           RESOURCE: nais/dev-gcp.yaml
-          VAR: image=${{ env.docker_image }}
