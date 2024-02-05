@@ -67,5 +67,4 @@ jobs:
         env:
           CLUSTER: dev-gcp
           IMAGE: ${{ needs.build-and-publish-image.outputs.image }}
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           RESOURCE: nais/dev-gcp.yaml
