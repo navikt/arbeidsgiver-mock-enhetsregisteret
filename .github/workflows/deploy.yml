@@ -45,7 +45,7 @@ jobs:
           cache: gradle
 
       - name: Build jar with Gradle
-        run: ./gradlew clean build installDist
+        run: ./gradlew clean build
 
       - uses: nais/docker-build-push@v0
         id: docker-push
