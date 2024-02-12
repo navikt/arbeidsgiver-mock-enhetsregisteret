@@ -82,7 +82,7 @@ jobs:
       - uses: navikt/pia-actions/trivy-scan@v1 # https://github.com/navikt/pia-actions/tree/main/trivy-scan
         with:
           image: ${{ needs.build-and-publish-image.outputs.image }}
-          team: teamia
+          team: pia
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
           upload-artifact: true
