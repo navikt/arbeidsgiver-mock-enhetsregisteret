@@ -1,8 +1,8 @@
 plugins {
     java
     application
-    kotlin("jvm") version "1.9.22"
-    kotlin("plugin.serialization") version "1.9.22"
+    kotlin("jvm") version "1.9.23"
+    kotlin("plugin.serialization") version "1.9.23"
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
@@ -18,16 +18,16 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
 
-    val kotestVerstion = "5.8.1"
+    val kotestVerstion = "5.9.0"
     testImplementation("io.kotest:kotest-assertions-core:$kotestVerstion")
 
-    val ktorVersion = "2.3.9"
+    val ktorVersion = "2.3.11"
     implementation("io.ktor:ktor-server-core:$ktorVersion")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
     implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
 
-    implementation("ch.qos.logback:logback-classic:1.5.3")
+    implementation("ch.qos.logback:logback-classic:1.5.6")
     implementation("net.logstash.logback:logstash-logback-encoder:7.4")
 }
 
