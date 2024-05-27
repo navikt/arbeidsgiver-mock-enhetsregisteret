@@ -29,7 +29,17 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:1.5.6")
     implementation("net.logstash.logback:logstash-logback-encoder:7.4")
+
+    constraints {
+        implementation("io.netty:netty-codec-http2") {
+            version {
+                require("4.1.110.Final")
+            }
+            because("ktor-server-netty bruker en sårbar versjon på 4.1.106.Final")
+        }
+    }
 }
+
 
 
 kotlin {
