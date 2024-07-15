@@ -1,8 +1,11 @@
+val kotestVerstion = "5.9.1"
+val ktorVersion = "2.3.12"
+
 plugins {
     java
     application
-    kotlin("jvm") version "1.9.23"
-    kotlin("plugin.serialization") version "1.9.23"
+    kotlin("jvm") version "2.0.0"
+    kotlin("plugin.serialization") version "2.0.0"
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
@@ -18,26 +21,19 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
 
-    val kotestVerstion = "5.9.0"
+
     testImplementation("io.kotest:kotest-assertions-core:$kotestVerstion")
 
-    val ktorVersion = "2.3.11"
+
     implementation("io.ktor:ktor-server-core:$ktorVersion")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
     implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+    implementation("io.netty:netty-codec-http2:4.1.111.Final")
 
     implementation("ch.qos.logback:logback-classic:1.5.6")
     implementation("net.logstash.logback:logstash-logback-encoder:7.4")
 
-    constraints {
-        implementation("io.netty:netty-codec-http2") {
-            version {
-                require("4.1.110.Final")
-            }
-            because("ktor-server-netty bruker en sårbar versjon på 4.1.106.Final")
-        }
-    }
 }
 
 
