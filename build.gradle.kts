@@ -1,11 +1,14 @@
 val kotestVerstion = "5.9.1"
 val ktorVersion = "2.3.12"
+val nettyCodecHttp2Version = "4.1.114.Final"
+val logbackClassicVersion = "1.5.9"
+val logstashLogbackEncoderVersion = "8.0"
 
 plugins {
     java
     application
-    kotlin("jvm") version "2.0.10"
-    kotlin("plugin.serialization") version "2.0.10"
+    kotlin("jvm") version "2.0.20"
+    kotlin("plugin.serialization") version "2.0.20"
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
@@ -29,10 +32,10 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
     implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-    implementation("io.netty:netty-codec-http2:4.1.112.Final")
+    implementation("io.netty:netty-codec-http2:$nettyCodecHttp2Version")
 
-    implementation("ch.qos.logback:logback-classic:1.5.6")
-    implementation("net.logstash.logback:logstash-logback-encoder:8.0")
+    implementation("ch.qos.logback:logback-classic:$logbackClassicVersion")
+    implementation("net.logstash.logback:logstash-logback-encoder:$logstashLogbackEncoderVersion")
 
 }
 
