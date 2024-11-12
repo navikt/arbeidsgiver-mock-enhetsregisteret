@@ -22,28 +22,29 @@ data class Underenhet(
     private val overordnetEnhet: String,
     private val oppstartsdato: String,
     private val datoEierskifte: String,
-    private val beliggenhetsadresse: Adresse
+    private val beliggenhetsadresse: Adresse,
 ) {
-    fun tilDto() = UnderenhetDTO(
-        organisasjonsnummer = organisasjonsnummer,
-        navn = navn,
-        organisasjonsform = organisasjonsform,
-        postadresse = postadresse,
-        registreringsdatoEnhetsregisteret = registreringsdatoEnhetsregisteret,
-        registrertIMvaregisteret = registrertIMvaregisteret,
-        naeringskode1 = naeringskode1,
-        antallAnsatte = antallAnsatte,
-        overordnetEnhet = overordnetEnhet,
-        oppstartsdato = oppstartsdato,
-        datoEierskifte = datoEierskifte,
-        beliggenhetsadresse = beliggenhetsadresse,
-        _links = UnderenhetLenker(
-            self = Link(
-                href = "https://data.brreg.no/enhetsregisteret/api/underenheter/${organisasjonsnummer}"
+    fun tilDto() =
+        UnderenhetDTO(
+            organisasjonsnummer = organisasjonsnummer,
+            navn = navn,
+            organisasjonsform = organisasjonsform,
+            postadresse = postadresse,
+            registreringsdatoEnhetsregisteret = registreringsdatoEnhetsregisteret,
+            registrertIMvaregisteret = registrertIMvaregisteret,
+            naeringskode1 = naeringskode1,
+            antallAnsatte = antallAnsatte,
+            overordnetEnhet = overordnetEnhet,
+            oppstartsdato = oppstartsdato,
+            datoEierskifte = datoEierskifte,
+            beliggenhetsadresse = beliggenhetsadresse,
+            _links = UnderenhetLenker(
+                self = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/underenheter/$organisasjonsnummer",
+                ),
+                overordnetEnhet = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/$overordnetEnhet",
+                ),
             ),
-            overordnetEnhet = Link(
-                href = "https://data.brreg.no/enhetsregisteret/api/enheter/${overordnetEnhet}"
-            )
         )
-    )
 }

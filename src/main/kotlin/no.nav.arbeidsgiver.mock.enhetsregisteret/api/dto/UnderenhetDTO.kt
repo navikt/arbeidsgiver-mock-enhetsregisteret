@@ -20,5 +20,5 @@ data class UnderenhetDTO(
     val oppstartsdato: String,
     val datoEierskifte: String,
     val beliggenhetsadresse: Adresse,
-    val _links: UnderenhetLenker
+    val _links: UnderenhetLenker,
 )

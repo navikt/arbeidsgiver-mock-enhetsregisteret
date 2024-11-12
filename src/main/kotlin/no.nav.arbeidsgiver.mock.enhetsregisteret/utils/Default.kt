@@ -2,15 +2,12 @@ package no.nav.arbeidsgiver.mock.enhetsregisteret.utils
 
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Adresse
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.InstitusjonellSektorkode
-import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Link
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Målform
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Næringskode
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Organisasjonsform
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Organisasjonsform.Companion.forOrganisasjonsledd
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OverordnetEnhet
-import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OverordnetEnhetLenker
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Underenhet
-import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.UnderenhetLenker
 
 class Default {
     companion object {
@@ -22,7 +19,7 @@ class Default {
             poststed = "OSLO",
             adresse = arrayOf("Default adresse"),
             kommune = "OSLO",
-            kommunenummer = "0301"
+            kommunenummer = "0301",
         )
         val NÆRINGSKODE = Næringskode(
             beskrivelse = "Barnehager",
@@ -41,7 +38,7 @@ class Default {
             overordnetEnhet = "999999999",
             oppstartsdato = DATO,
             datoEierskifte = DATO,
-            beliggenhetsadresse = ADRESSE
+            beliggenhetsadresse = ADRESSE,
         )
 
         val OVERORDNET_ENHET = OverordnetEnhet(
@@ -62,7 +59,7 @@ class Default {
             stiftelsesdato = DATO,
             institusjonellSektorkode = InstitusjonellSektorkode(
                 kode = "8300",
-                beskrivelse = "Statsforvaltningen"
+                beskrivelse = "Statsforvaltningen",
             ),
             registrertIForetaksregisteret = false,
             registrertIStiftelsesregisteret = false,
@@ -70,7 +67,7 @@ class Default {
             konkurs = false,
             underAvvikling = false,
             underTvangsavviklingEllerTvangsopplosning = false,
-            maalform = Målform.Bokmål
+            maalform = Målform.Bokmål,
         )
     }
 }

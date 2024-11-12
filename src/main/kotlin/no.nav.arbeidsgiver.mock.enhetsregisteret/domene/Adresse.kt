@@ -3,7 +3,7 @@ package no.nav.arbeidsgiver.mock.enhetsregisteret.domene
 import kotlinx.serialization.Serializable
 
 @Serializable
-class Adresse (
+class Adresse(
     val land: String,
     val landkode: String,
     val postnummer: String,

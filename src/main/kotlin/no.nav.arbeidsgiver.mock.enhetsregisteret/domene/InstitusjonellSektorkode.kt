@@ -3,7 +3,7 @@ package no.nav.arbeidsgiver.mock.enhetsregisteret.domene
 import kotlinx.serialization.Serializable
 
 @Serializable
-class InstitusjonellSektorkode (
+class InstitusjonellSektorkode(
     val kode: String,
-    val beskrivelse: String
+    val beskrivelse: String,
 )

@@ -8,17 +8,14 @@ import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.Default
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.Default.Companion.OVERORDNET_ENHET
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.log
 
-
 class OverordnetEnhetRepository {
-
     fun hentForOverordnetEnhet(orgnr: String): OverordnetEnhet {
-        log("hentForOverordnetEnhet").info("Henter opplysninger for overordnetEnhet '${orgnr}'")
+        log("hentForOverordnetEnhet").info("Henter opplysninger for overordnetEnhet '$orgnr'")
 
         return OVERORDNET_ENHETER.getOrDefault(orgnr, Default.OVERORDNET_ENHET)
     }
 
     companion object {
-
         val KOMMUNE_MED_KOMMUNENR_1142 = OVERORDNET_ENHET.copy(
             organisasjonsnummer = "910562223",
             navn = "Kommune med kommunenr 1142",
@@ -30,8 +27,8 @@ class OverordnetEnhetRepository {
             ),
             institusjonellSektorkode = InstitusjonellSektorkode(
                 kode = "8300",
-                beskrivelse = "Statsforvaltningen"
-            )
+                beskrivelse = "Statsforvaltningen",
+            ),
         )
 
         val SPISS_SJOKKERT_TIGER_AS = OVERORDNET_ENHET.copy(
@@ -40,10 +37,10 @@ class OverordnetEnhetRepository {
             organisasjonsform = Organisasjonsform.forAksjeselskap(),
             naeringskode1 = Næringskode(
                 kode = "87.101",
-                beskrivelse = "Sykehjem"
+                beskrivelse = "Sykehjem",
             ),
             antallAnsatte = 2550,
-            overordnetEnhet = "999999999"
+            overordnetEnhet = "999999999",
         )
 
         val TILLITSFULL_PEN_TIGER_AS = OVERORDNET_ENHET.copy(
@@ -52,10 +49,10 @@ class OverordnetEnhetRepository {
             organisasjonsform = Organisasjonsform.forAksjeselskap(),
             naeringskode1 = Næringskode(
                 kode = "87.101",
-                beskrivelse = "Sykehjem"
+                beskrivelse = "Sykehjem",
             ),
             antallAnsatte = 2550,
-            overordnetEnhet = "999999999"
+            overordnetEnhet = "999999999",
         )
 
         val KVART_ALLSIDIG_TIGER_AS = OVERORDNET_ENHET.copy(
@@ -64,10 +61,10 @@ class OverordnetEnhetRepository {
             organisasjonsform = Organisasjonsform.forAksjeselskap(),
             naeringskode1 = Næringskode(
                 kode = "87.101",
-                beskrivelse = "Sykehjem"
+                beskrivelse = "Sykehjem",
             ),
             antallAnsatte = 2550,
-            overordnetEnhet = "999999999"
+            overordnetEnhet = "999999999",
         )
 
         val INNBRINGENDE_LATTERMILD_APE = OVERORDNET_ENHET.copy(
@@ -76,10 +73,10 @@ class OverordnetEnhetRepository {
             organisasjonsform = Organisasjonsform.forAksjeselskap(),
             naeringskode1 = Næringskode(
                 kode = "87.101",
-                beskrivelse = "Sykehjem"
+                beskrivelse = "Sykehjem",
             ),
             antallAnsatte = 2550,
-            overordnetEnhet = "999999999"
+            overordnetEnhet = "999999999",
         )
 
         val OVERORDNET_ENHETER = mapOf(

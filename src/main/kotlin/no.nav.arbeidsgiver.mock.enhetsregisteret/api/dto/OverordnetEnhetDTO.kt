@@ -30,6 +30,5 @@ data class OverordnetEnhetDTO(
     val underAvvikling: Boolean,
     val underTvangsavviklingEllerTvangsopplosning: Boolean,
     val maalform: Målform,
-    val _links: OverordnetEnhetLenker
+    val _links: OverordnetEnhetLenker,
 )
-

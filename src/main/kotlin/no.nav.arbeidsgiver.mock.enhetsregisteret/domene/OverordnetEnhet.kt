@@ -32,37 +32,37 @@ data class OverordnetEnhet(
     private val konkurs: Boolean,
     private val underAvvikling: Boolean,
     private val underTvangsavviklingEllerTvangsopplosning: Boolean,
-    private val maalform: Målform
+    private val maalform: Målform,
 ) {
-    fun tilDto() = OverordnetEnhetDTO(
-        organisasjonsnummer = organisasjonsnummer,
-        navn = navn,
-        organisasjonsform = organisasjonsform,
-        hjemmeside = hjemmeside,
-        postadresse = postadresse,
-        registreringsdatoEnhetsregisteret = registreringsdatoEnhetsregisteret,
-        registrertIMvaregisteret = registrertIMvaregisteret,
-        naeringskode1 = naeringskode1,
-        antallAnsatte = antallAnsatte,
-        overordnetEnhet = overordnetEnhet,
-        forretningsadresse = forretningsadresse,
-        stiftelsesdato = stiftelsesdato,
-        institusjonellSektorkode = institusjonellSektorkode,
-        registrertIForetaksregisteret = registrertIForetaksregisteret,
-        registrertIStiftelsesregisteret = registrertIStiftelsesregisteret,
-        registrertIFrivillighetsregisteret = registrertIFrivillighetsregisteret,
-        konkurs = konkurs,
-        underAvvikling = underAvvikling,
-        underTvangsavviklingEllerTvangsopplosning = underTvangsavviklingEllerTvangsopplosning,
-        maalform = maalform,
-        _links = OverordnetEnhetLenker(
-            self = Link(
-                href = "https://data.brreg.no/enhetsregisteret/api/enheter/${organisasjonsnummer}"
+    fun tilDto() =
+        OverordnetEnhetDTO(
+            organisasjonsnummer = organisasjonsnummer,
+            navn = navn,
+            organisasjonsform = organisasjonsform,
+            hjemmeside = hjemmeside,
+            postadresse = postadresse,
+            registreringsdatoEnhetsregisteret = registreringsdatoEnhetsregisteret,
+            registrertIMvaregisteret = registrertIMvaregisteret,
+            naeringskode1 = naeringskode1,
+            antallAnsatte = antallAnsatte,
+            overordnetEnhet = overordnetEnhet,
+            forretningsadresse = forretningsadresse,
+            stiftelsesdato = stiftelsesdato,
+            institusjonellSektorkode = institusjonellSektorkode,
+            registrertIForetaksregisteret = registrertIForetaksregisteret,
+            registrertIStiftelsesregisteret = registrertIStiftelsesregisteret,
+            registrertIFrivillighetsregisteret = registrertIFrivillighetsregisteret,
+            konkurs = konkurs,
+            underAvvikling = underAvvikling,
+            underTvangsavviklingEllerTvangsopplosning = underTvangsavviklingEllerTvangsopplosning,
+            maalform = maalform,
+            _links = OverordnetEnhetLenker(
+                self = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/$organisasjonsnummer",
+                ),
+                overordnetEnhet = Link(
+                    href = "https://data.brreg.no/enhetsregisteret/api/enheter/$overordnetEnhet",
+                ),
             ),
-            overordnetEnhet = Link(
-                href = "https://data.brreg.no/enhetsregisteret/api/enheter/${overordnetEnhet}"
-            )
         )
-    )
 }
-

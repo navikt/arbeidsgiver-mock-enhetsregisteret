@@ -24,9 +24,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
 
-
     testImplementation("io.kotest:kotest-assertions-core:$kotestVerstion")
-
 
     implementation("io.ktor:ktor-server-core:$ktorVersion")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
@@ -36,10 +34,7 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:$logbackClassicVersion")
     implementation("net.logstash.logback:logstash-logback-encoder:$logstashLogbackEncoderVersion")
-
 }
-
-
 
 kotlin {
     jvmToolchain(21)

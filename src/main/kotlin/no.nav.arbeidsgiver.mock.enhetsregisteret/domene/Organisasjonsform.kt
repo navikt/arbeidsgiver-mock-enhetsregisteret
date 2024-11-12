@@ -15,33 +15,32 @@ class Organisasjonsform(
     val beskrivelse: String,
     val _links: OrganisasjonsformLenker,
 ) {
-
     companion object {
         fun forBedrift() =
             Organisasjonsform(
                 OrganisasjonsformKode.BEDR,
                 "Bedrift",
-                OrganisasjonsformLenker(Link("https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/BEDR")
-                )
+                OrganisasjonsformLenker(
+                    Link("https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/BEDR"),
+                ),
             )
 
         fun forOrganisasjonsledd() =
             Organisasjonsform(
                 OrganisasjonsformKode.ORGL,
                 "Organisasjonsledd",
-                OrganisasjonsformLenker(Link("https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/ORGL")
-                )
+                OrganisasjonsformLenker(
+                    Link("https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/ORGL"),
+                ),
             )
 
         fun forAksjeselskap() =
             Organisasjonsform(
                 OrganisasjonsformKode.AS,
                 "Aksjeselskap",
-                OrganisasjonsformLenker(Link("https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/AS")
-                )
+                OrganisasjonsformLenker(
+                    Link("https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/AS"),
+                ),
             )
-
     }
 }
-
-

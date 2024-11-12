@@ -6,22 +6,19 @@ import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Underenhet
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.Default.Companion.UNDERENHET
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.log
 
-
 class UnderenhetRepository {
-
     fun hentForUnderenhet(orgnr: String): Underenhet {
-        log("hentForUnderenhet").info("Henter opplysninger for underenhet '${orgnr}'")
+        log("hentForUnderenhet").info("Henter opplysninger for underenhet '$orgnr'")
 
         return UNDERENHETER.getOrDefault(
             orgnr,
             UNDERENHET.copy(
-                organisasjonsnummer = orgnr
-            )
+                organisasjonsnummer = orgnr,
+            ),
         )
     }
 
     companion object {
-
         val ORKANGER_OG_BREMNES = UNDERENHET.copy(
             organisasjonsnummer = "910562452",
             navn = "Orkanger og Bremnes barnehage",
@@ -31,7 +28,7 @@ class UnderenhetRepository {
                 kode = "88.911",
             ),
             antallAnsatte = 143,
-            overordnetEnhet = OverordnetEnhetRepository.KOMMUNE_MED_KOMMUNENR_1142.organisasjonsnummer
+            overordnetEnhet = OverordnetEnhetRepository.KOMMUNE_MED_KOMMUNENR_1142.organisasjonsnummer,
         )
 
         val SPISS_SJOKKERT_TIGER_AS_UNDERENHET = UNDERENHET.copy(
@@ -40,10 +37,10 @@ class UnderenhetRepository {
             organisasjonsform = forBedrift(),
             naeringskode1 = Næringskode(
                 kode = "87.101",
-                beskrivelse = "Sykehjem"
+                beskrivelse = "Sykehjem",
             ),
             antallAnsatte = 1621,
-            overordnetEnhet = OverordnetEnhetRepository.SPISS_SJOKKERT_TIGER_AS.organisasjonsnummer
+            overordnetEnhet = OverordnetEnhetRepository.SPISS_SJOKKERT_TIGER_AS.organisasjonsnummer,
         )
 
         val TILLITSFULL_PEN_TIGER_AS_UNDERENHET = UNDERENHET.copy(
@@ -52,10 +49,10 @@ class UnderenhetRepository {
             organisasjonsform = forBedrift(),
             naeringskode1 = Næringskode(
                 kode = "87.101",
-                beskrivelse = "Sykehjem"
+                beskrivelse = "Sykehjem",
             ),
             antallAnsatte = 1621,
-            overordnetEnhet = OverordnetEnhetRepository.TILLITSFULL_PEN_TIGER_AS.organisasjonsnummer
+            overordnetEnhet = OverordnetEnhetRepository.TILLITSFULL_PEN_TIGER_AS.organisasjonsnummer,
         )
 
         val KVART_ALLSIDIG_TIGER_AS_UNDERENHET = UNDERENHET.copy(
@@ -64,12 +61,11 @@ class UnderenhetRepository {
             organisasjonsform = forBedrift(),
             naeringskode1 = Næringskode(
                 kode = "87.101",
-                beskrivelse = "Sykehjem"
+                beskrivelse = "Sykehjem",
             ),
             antallAnsatte = 1621,
-            overordnetEnhet = OverordnetEnhetRepository.KVART_ALLSIDIG_TIGER_AS.organisasjonsnummer
+            overordnetEnhet = OverordnetEnhetRepository.KVART_ALLSIDIG_TIGER_AS.organisasjonsnummer,
         )
-
 
         val INNBRINGENDE_LATTERMILD_APE_UNDERENHET = UNDERENHET.copy(
             organisasjonsnummer = "311545795",
@@ -77,7 +73,7 @@ class UnderenhetRepository {
             organisasjonsform = forBedrift(),
             naeringskode1 = Næringskode(
                 kode = "87.101",
-                beskrivelse = "Sykehjem"
+                beskrivelse = "Sykehjem",
             ),
             antallAnsatte = 1621,
             overordnetEnhet = OverordnetEnhetRepository.INNBRINGENDE_LATTERMILD_APE.organisasjonsnummer,
@@ -88,12 +84,11 @@ class UnderenhetRepository {
             organisasjonsform = forBedrift(),
             naeringskode1 = Næringskode(
                 kode = "87.101",
-                beskrivelse = "Sykehjem"
+                beskrivelse = "Sykehjem",
             ),
             antallAnsatte = 1621,
             overordnetEnhet = OverordnetEnhetRepository.INNBRINGENDE_LATTERMILD_APE.organisasjonsnummer,
         )
-
 
         val UNDERENHETER = mapOf(
             ORKANGER_OG_BREMNES.organisasjonsnummer to ORKANGER_OG_BREMNES,
@@ -101,7 +96,7 @@ class UnderenhetRepository {
             TILLITSFULL_PEN_TIGER_AS_UNDERENHET.organisasjonsnummer to TILLITSFULL_PEN_TIGER_AS_UNDERENHET,
             INNBRINGENDE_LATTERMILD_APE_UNDERENHET.organisasjonsnummer to INNBRINGENDE_LATTERMILD_APE_UNDERENHET,
             KVART_ALLSIDIG_TIGER_AS_UNDERENHET.organisasjonsnummer to KVART_ALLSIDIG_TIGER_AS_UNDERENHET,
-            ARENDAL_OG_BØNES_REVISJON.organisasjonsnummer to ARENDAL_OG_BØNES_REVISJON
+            ARENDAL_OG_BØNES_REVISJON.organisasjonsnummer to ARENDAL_OG_BØNES_REVISJON,
         )
     }
 }

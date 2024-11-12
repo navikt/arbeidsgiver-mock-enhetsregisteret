@@ -1,11 +1,11 @@
 package no.nav.arbeidsgiver.mock.enhetsregisteret
 
-import io.ktor.serialization.kotlinx.json.*
-import io.ktor.server.application.*
-import io.ktor.server.engine.*
-import io.ktor.server.netty.*
-import io.ktor.server.plugins.contentnegotiation.*
-import io.ktor.server.routing.*
+import io.ktor.serialization.kotlinx.json.json
+import io.ktor.server.application.install
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
+import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.server.routing.routing
 import no.nav.arbeidsgiver.mock.enhetsregisteret.api.endepunkt.enhetsregisteretEndepunkter
 import no.nav.arbeidsgiver.mock.enhetsregisteret.api.endepunkt.helseEndepunkter
 import no.nav.arbeidsgiver.mock.enhetsregisteret.api.repository.OverordnetEnhetRepository
@@ -17,14 +17,15 @@ fun main() {
 }
 
 fun bootstrapServer() {
-    val enhetsregisteretService = EnhetsregisteretService(
-        overordnetEnhetRepository = OverordnetEnhetRepository(),
-        underenhetRepository = UnderenhetRepository()
-    )
+    val enhetsregisteretService =
+        EnhetsregisteretService(
+            overordnetEnhetRepository = OverordnetEnhetRepository(),
+            underenhetRepository = UnderenhetRepository(),
+        )
     val port = System.getenv("SERVER_PORT")?.toInt() ?: 8080
 
     embeddedServer(factory = Netty, port = port) {
-        log("bootstrapServer").info("Starter applikasjon on port '${port}'")
+        log("bootstrapServer").info("Starter applikasjon on port '$port'")
         install(ContentNegotiation) {
             json()
         }
@@ -34,4 +35,3 @@ fun bootstrapServer() {
         }
     }.start(wait = true)
 }
-
