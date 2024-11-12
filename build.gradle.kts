@@ -1,5 +1,5 @@
 val kotestVerstion = "5.9.1"
-val ktorVersion = "2.3.12"
+val ktorVersion = "3.0.1"
 val nettyCodecHttp2Version = "4.1.114.Final"
 val logbackClassicVersion = "1.5.9"
 val logstashLogbackEncoderVersion = "8.0"
