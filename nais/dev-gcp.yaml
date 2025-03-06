@@ -16,6 +16,16 @@ spec:
   readiness:
     path: /internal/isReady
     initialDelay: 60
+  observability:
+    autoInstrumentation:
+      enabled: true
+      runtime: java
+      destinations:
+        - id: "grafana-lgtm"
+    logging:
+      destinations:
+        - id: loki
+        - id: elastic
   env:
     - name: SERVER_PORT
       value: "8080"
