@@ -19,6 +19,18 @@ class UnderenhetRepository {
     }
 
     companion object {
+        val KOMPLETT_MOTIVERT_TIGER = UNDERENHET.copy(
+            organisasjonsnummer = "311263315",
+            navn = "KOMPLETT MOTIVERT TIGER AS",
+            organisasjonsform = forBedrift(),
+            naeringskode1 = Næringskode(
+                beskrivelse = "Produksjon av annet yttertøy",
+                kode = "14.130",
+            ),
+            antallAnsatte = 4,
+            overordnetEnhet = OverordnetEnhetRepository.KOMPLETT_MOTIVERT_TIGER_AS.organisasjonsnummer,
+        )
+
         val ORKANGER_OG_BREMNES = UNDERENHET.copy(
             organisasjonsnummer = "910562452",
             navn = "Orkanger og Bremnes barnehage",
@@ -91,6 +103,7 @@ class UnderenhetRepository {
         )
 
         val UNDERENHETER = mapOf(
+            KOMPLETT_MOTIVERT_TIGER.organisasjonsnummer to KOMPLETT_MOTIVERT_TIGER,
             ORKANGER_OG_BREMNES.organisasjonsnummer to ORKANGER_OG_BREMNES,
             SPISS_SJOKKERT_TIGER_AS_UNDERENHET.organisasjonsnummer to SPISS_SJOKKERT_TIGER_AS_UNDERENHET,
             TILLITSFULL_PEN_TIGER_AS_UNDERENHET.organisasjonsnummer to TILLITSFULL_PEN_TIGER_AS_UNDERENHET,

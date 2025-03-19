@@ -12,10 +12,25 @@ class OverordnetEnhetRepository {
     fun hentForOverordnetEnhet(orgnr: String): OverordnetEnhet {
         log("hentForOverordnetEnhet").info("Henter opplysninger for overordnetEnhet '$orgnr'")
 
-        return OVERORDNET_ENHETER.getOrDefault(orgnr, Default.OVERORDNET_ENHET)
+        return OVERORDNET_ENHETER.getOrDefault(orgnr, OVERORDNET_ENHET)
     }
 
     companion object {
+        val KOMPLETT_MOTIVERT_TIGER_AS = OVERORDNET_ENHET.copy(
+            organisasjonsnummer = "310279323",
+            navn = "KOMPLETT MOTIVERT TIGER AS",
+            antallAnsatte = 18,
+            overordnetEnhet = "999999999",
+            naeringskode1 = Næringskode(
+                beskrivelse = "Produksjon av annet yttertøy",
+                kode = "14.130",
+            ),
+            institusjonellSektorkode = InstitusjonellSektorkode(
+                kode = "2100",
+                beskrivelse = "Private aksjeselskaper mv. ",
+            ),
+        )
+
         val KOMMUNE_MED_KOMMUNENR_1142 = OVERORDNET_ENHET.copy(
             organisasjonsnummer = "910562223",
             navn = "Kommune med kommunenr 1142",
@@ -80,6 +95,7 @@ class OverordnetEnhetRepository {
         )
 
         val OVERORDNET_ENHETER = mapOf(
+            KOMPLETT_MOTIVERT_TIGER_AS.organisasjonsnummer to KOMPLETT_MOTIVERT_TIGER_AS,
             KOMMUNE_MED_KOMMUNENR_1142.organisasjonsnummer to KOMMUNE_MED_KOMMUNENR_1142,
             SPISS_SJOKKERT_TIGER_AS.organisasjonsnummer to SPISS_SJOKKERT_TIGER_AS,
             TILLITSFULL_PEN_TIGER_AS.organisasjonsnummer to TILLITSFULL_PEN_TIGER_AS,
