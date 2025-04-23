@@ -17,7 +17,7 @@ data class Underenhet(
     private val postadresse: Adresse,
     private val registreringsdatoEnhetsregisteret: String,
     private val registrertIMvaregisteret: Boolean,
-    private val naeringskode1: Næringskode,
+    private val naeringskode1: Næringskode?,
     private val antallAnsatte: Int,
     private val overordnetEnhet: String,
     private val oppstartsdato: String,

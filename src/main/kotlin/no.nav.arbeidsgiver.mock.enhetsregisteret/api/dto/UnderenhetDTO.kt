@@ -14,7 +14,7 @@ data class UnderenhetDTO(
     val postadresse: Adresse,
     val registreringsdatoEnhetsregisteret: String,
     val registrertIMvaregisteret: Boolean,
-    val naeringskode1: Næringskode,
+    val naeringskode1: Næringskode? = null,
     val antallAnsatte: Int,
     val overordnetEnhet: String,
     val oppstartsdato: String,

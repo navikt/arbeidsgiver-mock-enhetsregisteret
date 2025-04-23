@@ -4,7 +4,6 @@ import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.InstitusjonellSektorkode
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Næringskode
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.Organisasjonsform
 import no.nav.arbeidsgiver.mock.enhetsregisteret.domene.OverordnetEnhet
-import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.Default
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.Default.Companion.OVERORDNET_ENHET
 import no.nav.arbeidsgiver.mock.enhetsregisteret.utils.log
 
@@ -94,6 +93,18 @@ class OverordnetEnhetRepository {
             overordnetEnhet = "999999999",
         )
 
+        val STOLT_FLAT_PIGGSVIN = OVERORDNET_ENHET.copy(
+            organisasjonsnummer = "310567620",
+            navn = "STOLT FLAT PIGGSVIN",
+            organisasjonsform = Organisasjonsform.forAksjeselskap(),
+            naeringskode1 = Næringskode(
+                kode = "87.101",
+                beskrivelse = "Sykehjem",
+            ),
+            antallAnsatte = 2550,
+            overordnetEnhet = "999999999",
+        )
+
         val OVERORDNET_ENHETER = mapOf(
             KOMPLETT_MOTIVERT_TIGER_AS.organisasjonsnummer to KOMPLETT_MOTIVERT_TIGER_AS,
             KOMMUNE_MED_KOMMUNENR_1142.organisasjonsnummer to KOMMUNE_MED_KOMMUNENR_1142,
@@ -101,6 +112,7 @@ class OverordnetEnhetRepository {
             TILLITSFULL_PEN_TIGER_AS.organisasjonsnummer to TILLITSFULL_PEN_TIGER_AS,
             KVART_ALLSIDIG_TIGER_AS.organisasjonsnummer to KVART_ALLSIDIG_TIGER_AS,
             INNBRINGENDE_LATTERMILD_APE.organisasjonsnummer to INNBRINGENDE_LATTERMILD_APE,
+            STOLT_FLAT_PIGGSVIN.organisasjonsnummer to STOLT_FLAT_PIGGSVIN,
         )
     }
 }

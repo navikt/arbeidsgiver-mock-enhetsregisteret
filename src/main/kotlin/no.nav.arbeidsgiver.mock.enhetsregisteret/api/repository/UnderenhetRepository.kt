@@ -102,6 +102,15 @@ class UnderenhetRepository {
             overordnetEnhet = OverordnetEnhetRepository.INNBRINGENDE_LATTERMILD_APE.organisasjonsnummer,
         )
 
+        val AUTONOM_VIS_FJELLREV = UNDERENHET.copy(
+            organisasjonsnummer = "314620127",
+            navn = "AUTONOM VIS FJELLREV",
+            organisasjonsform = forBedrift(),
+            naeringskode1 = null,
+            antallAnsatte = 1621,
+            overordnetEnhet = OverordnetEnhetRepository.STOLT_FLAT_PIGGSVIN.organisasjonsnummer,
+        )
+
         val UNDERENHETER = mapOf(
             KOMPLETT_MOTIVERT_TIGER.organisasjonsnummer to KOMPLETT_MOTIVERT_TIGER,
             ORKANGER_OG_BREMNES.organisasjonsnummer to ORKANGER_OG_BREMNES,
@@ -110,6 +119,7 @@ class UnderenhetRepository {
             INNBRINGENDE_LATTERMILD_APE_UNDERENHET.organisasjonsnummer to INNBRINGENDE_LATTERMILD_APE_UNDERENHET,
             KVART_ALLSIDIG_TIGER_AS_UNDERENHET.organisasjonsnummer to KVART_ALLSIDIG_TIGER_AS_UNDERENHET,
             ARENDAL_OG_BØNES_REVISJON.organisasjonsnummer to ARENDAL_OG_BØNES_REVISJON,
+            AUTONOM_VIS_FJELLREV.organisasjonsnummer to AUTONOM_VIS_FJELLREV,
         )
     }
 }
