@@ -1,14 +1,14 @@
 val kotestVerstion = "5.9.1"
-val ktorVersion = "3.1.1"
-val nettyCodecHttp2Version = "4.1.119.Final"
-val logbackClassicVersion = "1.5.17"
-val logstashLogbackEncoderVersion = "8.0"
+val ktorVersion = "3.1.3"
+val nettyCodecHttp2Version = "4.2.1.Final"
+val logbackClassicVersion = "1.5.18"
+val logstashLogbackEncoderVersion = "8.1"
 
 plugins {
     java
     application
-    kotlin("jvm") version "2.1.10"
-    kotlin("plugin.serialization") version "2.1.10"
+    kotlin("jvm") version "2.1.20"
+    kotlin("plugin.serialization") version "2.1.20"
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
