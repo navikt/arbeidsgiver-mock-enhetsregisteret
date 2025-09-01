@@ -37,7 +37,7 @@ class UnderenhetRepository {
             organisasjonsform = forBedrift(),
             naeringskode1 = Næringskode(
                 beskrivelse = "Barnehager",
-                kode = "88.911",
+                kode = "85.100",
             ),
             antallAnsatte = 143,
             overordnetEnhet = OverordnetEnhetRepository.KOMMUNE_MED_KOMMUNENR_1142.organisasjonsnummer,
@@ -48,8 +48,8 @@ class UnderenhetRepository {
             navn = "SPISS SJOKKERT TIGER AS",
             organisasjonsform = forBedrift(),
             naeringskode1 = Næringskode(
-                kode = "87.101",
-                beskrivelse = "Sykehjem",
+                kode = "85.100",
+                beskrivelse = "Barnehager",
             ),
             antallAnsatte = 1621,
             overordnetEnhet = OverordnetEnhetRepository.SPISS_SJOKKERT_TIGER_AS.organisasjonsnummer,

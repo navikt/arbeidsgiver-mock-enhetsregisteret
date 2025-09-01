@@ -23,7 +23,7 @@ class Default {
         )
         val NÆRINGSKODE = Næringskode(
             beskrivelse = "Barnehager",
-            kode = "88.911",
+            kode = "85.100",
         )
 
         val UNDERENHET = Underenhet(

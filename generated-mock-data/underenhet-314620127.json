@@ -1,6 +1,6 @@
 {
-    "organisasjonsnummer": "910562452",
-    "navn": "Orkanger og Bremnes barnehage",
+    "organisasjonsnummer": "314620127",
+    "navn": "AUTONOM VIS FJELLREV",
     "organisasjonsform": {
         "kode": "BEDR",
         "beskrivelse": "Bedrift",
@@ -23,12 +23,8 @@
     },
     "registreringsdatoEnhetsregisteret": "2010-01-01",
     "registrertIMvaregisteret": false,
-    "naeringskode1": {
-        "beskrivelse": "Barnehager",
-        "kode": "85.100"
-    },
-    "antallAnsatte": 143,
-    "overordnetEnhet": "910562223",
+    "antallAnsatte": 1621,
+    "overordnetEnhet": "310567620",
     "oppstartsdato": "2010-01-01",
     "datoEierskifte": "2010-01-01",
     "beliggenhetsadresse": {
@@ -44,10 +40,10 @@
     },
     "_links": {
         "self": {
-            "href": "https://data.brreg.no/enhetsregisteret/api/underenheter/910562452"
+            "href": "https://data.brreg.no/enhetsregisteret/api/underenheter/314620127"
         },
         "overordnetEnhet": {
-            "href": "https://data.brreg.no/enhetsregisteret/api/enheter/910562223"
+            "href": "https://data.brreg.no/enhetsregisteret/api/enheter/310567620"
         }
     }
 }

@@ -24,8 +24,8 @@
     "registreringsdatoEnhetsregisteret": "2010-01-01",
     "registrertIMvaregisteret": false,
     "naeringskode1": {
-        "beskrivelse": "Sykehjem",
-        "kode": "87.101"
+        "beskrivelse": "Barnehager",
+        "kode": "85.100"
     },
     "antallAnsatte": 1621,
     "overordnetEnhet": "310529915",
