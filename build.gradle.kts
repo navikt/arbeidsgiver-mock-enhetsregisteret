@@ -1,8 +1,8 @@
-val kotestVerstion = "6.0.4"
-val ktorVersion = "3.3.2"
-val nettyCodecHttp2Version = "4.2.7.Final"
-val logbackClassicVersion = "1.5.20"
-val logstashLogbackEncoderVersion = "8.1"
+val kotestVerstion = "6.1.0"
+val ktorVersion = "3.3.3"
+val nettyCodecHttp2Version = "4.2.9.Final"
+val logbackClassicVersion = "1.5.25"
+val logstashLogbackEncoderVersion = "9.0"
 
 plugins {
     java
