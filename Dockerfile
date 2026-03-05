@@ -1,6 +1,5 @@
 FROM cgr.dev/chainguard/jre:latest
 ENV TZ="Europe/Oslo"
-COPY ./build/libs/arbeidsgiver-mock-enhetsregisteret-all.jar app.jar
-
-EXPOSE 8080
-CMD ["-jar", "app.jar"]
+WORKDIR /app
+COPY build/install/arbeidsgiver-mock-enhetsregisteret/ /app/
+ENTRYPOINT ["java", "-cp", "/app/lib/*", "no.nav.arbeidsgiver.mock.enhetsregisteret.MainKt"]

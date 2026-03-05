@@ -30,7 +30,7 @@ jobs:
           distribution: temurin
           cache: gradle
       - name: Run tests
-        run: ./gradlew test --info
+        run: ./gradlew test
 
   build-and-publish-image:
     name: Build and publish image
@@ -45,7 +45,7 @@ jobs:
           cache: gradle
 
       - name: Build jar with Gradle
-        run: ./gradlew clean build -x test
+        run: ./gradlew clean installDist
 
       - uses: nais/docker-build-push@v0
         id: docker-push
