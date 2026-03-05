@@ -9,7 +9,6 @@ plugins {
     application
     kotlin("jvm") version "2.3.10"
     kotlin("plugin.serialization") version "2.3.10"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 application {
@@ -43,4 +42,10 @@ kotlin {
 tasks.register<JavaExec>("generate-mock-files") {
     classpath = sourceSets.test.get().runtimeClasspath
     mainClass.set("no.nav.arbeidsgiver.mock.enhetsregisteret.GradleTasks")
+}
+
+tasks {
+    test {
+        dependsOn(installDist)
+    }
 }
