@@ -1,4 +1,4 @@
-val kotestVerstion = "6.1.10"
+val kotestVerstion = "6.1.11"
 val ktorVersion = "3.4.2"
 val nettyCodecHttp2Version = "4.2.12.Final"
 val logbackClassicVersion = "1.5.32"
