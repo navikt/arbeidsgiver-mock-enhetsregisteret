@@ -37,7 +37,7 @@ dependencies {
     constraints {
         implementation("tools.jackson.core:jackson-core") {
             version { require("3.1.1") }
-            because("versjoner <= 3.1.0 har sårbarhet. inkludert i logstash-logback-encoder:9.0")
+            because("versjoner <= 3.1.0 har sårbarhet inkludert i logstash-logback-encoder:9.0")
         }
     }
 }
