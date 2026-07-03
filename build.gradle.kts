@@ -1,5 +1,5 @@
 val kotestVerstion = "6.2.1"
-val ktorVersion = "3.5.0"
+val ktorVersion = "3.5.1"
 val nettyCodecHttp2Version = "4.2.15.Final"
 val logbackClassicVersion = "1.5.34"
 val logstashLogbackEncoderVersion = "9.0"
@@ -36,7 +36,7 @@ dependencies {
 
     constraints {
         implementation("tools.jackson.core:jackson-core") {
-            version { require("3.1.1") }
+            version { require("3.1.4") }
             because("versjoner <= 3.1.0 har sårbarhet inkludert i logstash-logback-encoder:9.0")
         }
     }
