@@ -1,7 +1,7 @@
-val kotestVerstion = "6.2.2"
-val ktorVersion = "3.5.1"
+val kotestVerstion = "6.2.3"
+val ktorVersion = "3.5.2"
 val nettyCodecHttp2Version = "4.2.16.Final"
-val logbackClassicVersion = "1.5.37"
+val logbackClassicVersion = "1.6.1"
 val logstashLogbackEncoderVersion = "9.0"
 
 plugins {
