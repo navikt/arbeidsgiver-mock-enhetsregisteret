@@ -1,7 +1,6 @@
 val kotestVerstion = "6.2.6"
-val ktorVersion = "3.6.0"
-val nettyCodecHttp2Version = "4.2.19.Final"
-val logbackClassicVersion = "1.6.5"
+val ktorVersion = "3.6.1"
+val logbackClassicVersion = "1.6.6"
 val logstashLogbackEncoderVersion = "9.0"
 
 plugins {
@@ -29,17 +28,25 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
     implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-    implementation("io.netty:netty-codec-http2:$nettyCodecHttp2Version")
 
     implementation("ch.qos.logback:logback-classic:$logbackClassicVersion")
     implementation("net.logstash.logback:logstash-logback-encoder:$logstashLogbackEncoderVersion")
 
     constraints {
         implementation("tools.jackson.core:jackson-core") {
-            version { require("3.1.4") }
+            version { require("3.2.4") }
             because("versjoner <= 3.1.0 har sårbarhet inkludert i logstash-logback-encoder:9.0")
         }
     }
+    implementation("io.netty:netty-codec-http2") {
+        version {
+            require("4.2.20.Final")
+        }
+        because(
+            "ktor-server-netty har sårbar versjon",
+        )
+    }
+
 }
 
 kotlin {
