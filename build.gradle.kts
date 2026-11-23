@@ -1,6 +1,6 @@
 val kotestVerstion = "6.2.7"
 val ktorVersion = "3.6.1"
-val logbackClassicVersion = "1.6.6"
+val logbackClassicVersion = "1.6.7"
 val logstashLogbackEncoderVersion = "9.0"
 
 plugins {
